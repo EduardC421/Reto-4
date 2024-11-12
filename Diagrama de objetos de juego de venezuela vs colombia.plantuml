@@ -1,0 +1,79 @@
+@startuml
+
+object JuegoPanamericanos {
+    localidad = "Santiago de Chile"
+    puntuacion = "25-20, 20-25, 25-22"
+}
+
+object EquipoVenezuela {
+    nombre = "Venezuela"
+    registro = "VEN123"
+}
+
+object EquipoColombia {
+    nombre = "Colombia"
+    registro = "COL456"
+}
+
+object EntrenadorVenezuela {
+    nombre = "Juan Pérez"
+    telefono = "+58 123456789"
+    direccion = "Caracas, Venezuela"
+    nivelAcreditacion = "Internacional"
+    aniosExperiencia = 10
+}
+
+object EntrenadorColombia {
+    nombre = "María Rodríguez"
+    telefono = "+57 987654321"
+    direccion = "Bogotá, Colombia"
+    nivelAcreditacion = "Nacional"
+    aniosExperiencia = 8
+}
+
+object JugadorVenezuela1 {
+    nombre = "Carlos Mendoza"
+    telefono = "+58 111111111"
+    direccion = "Caracas, Venezuela"
+    numero = 10
+    posicion = "Armador"
+    esCapitan = true
+}
+
+object JugadorVenezuela2 {
+    nombre = "Luis Pérez"
+    telefono = "+58 222222222"
+    direccion = "Maracay, Venezuela"
+    numero = 5
+    posicion = "Opuesto"
+    esCapitan = false
+}
+
+object JugadorColombia1 {
+    nombre = "Andrés Gómez"
+    telefono = "+57 333333333"
+    direccion = "Medellín, Colombia"
+    numero = 7
+    posicion = "Punta"
+    esCapitan = true
+}
+
+object JugadorColombia2 {
+    nombre = "Jorge Ramírez"
+    telefono = "+57 444444444"
+    direccion = "Cali, Colombia"
+    numero = 12
+    posicion = "Central"
+    esCapitan = false
+}
+
+JuegoPanamericanos -- EquipoVenezuela
+JuegoPanamericanos -- EquipoColombia
+EquipoVenezuela -- EntrenadorVenezuela
+EquipoVenezuela *-- JugadorVenezuela1
+EquipoVenezuela *-- JugadorVenezuela2
+EquipoColombia -- EntrenadorColombia
+EquipoColombia *-- JugadorColombia1
+EquipoColombia *-- JugadorColombia2
+
+@enduml

@@ -1,0 +1,36 @@
+@startuml
+class Equipo {
+    - nombre: String
+    - registro: String
+    + obtenerCapitan(): Jugador
+    + agregarJugador(jugador: Jugador)
+}
+
+class Jugador {
+    - numero: Int
+    - posicion: String
+    - esCapitan: Boolean
+}
+
+abstract class Persona {
+    - nombre: String
+    - telefono: String
+    - direccion: String
+}
+
+class Entrenador {
+    - nivelAcreditacion: String
+    - aniosExperiencia: Int
+}
+
+class Juego {
+    - localidad: String
+    - puntuacion: String
+}
+
+Equipo "1" *-- "6..20" Jugador : tiene
+Equipo "0..1" *-- "1" Entrenador : tiene
+Equipo "2" -- "1" Juego : participa_en
+Jugador --|> Persona
+Entrenador --|> Persona
+@enduml
